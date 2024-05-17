@@ -1,30 +1,29 @@
-// Random Number Function
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-var player_score=0; // Player Score
-var computer_score=0; // Computer Score
+var player_score=0;
+var computer_score=0;
 
 const player = document.getElementById("player");
 player.addEventListener("click",(e)=>{
     e.preventDefault();
 
-    const paper= document.getElementById("paper"); // Player Paper
-    const scissor= document.getElementById("scissor"); // Player Scissor
-    const rock= document.getElementById("rock"); // Player Rock
+    const paper= document.getElementById("paper");
+    const scissor= document.getElementById("scissor");
+    const rock= document.getElementById("rock");
 
-    const randomNumber = getRandomNumber(1, 3); // Random From 1 To 3
+    const randomNumber = getRandomNumber(1, 3);
 
-    const imgpc=document.getElementById("comp"); // Player Image Choice
-    const pctex=document.getElementById("pctex"); // Player TEXT Choice
+    const imgpc=document.getElementById("comp");
+    const pctex=document.getElementById("pctex");
 
-    const score=document.getElementById("score"); // Show Text Of Score
-    const winner=document.getElementById("winner"); // Show Who Winner
+    const score=document.getElementById("score");
+    const winner=document.getElementById("winner");
 
-    const note =document.getElementById("note"); //Show No Option
+    const note =document.getElementById("note");
 
-    // Set Imagec& Text Of Computer Choice Of RPS
+
     if (paper.checked || rock.checked || scissor.checked){
         switch(randomNumber) {
             case 1:
@@ -44,7 +43,7 @@ player.addEventListener("click",(e)=>{
         player.value="Play Again";
     }
 
-    // Logic Of Game | Player Set Choice
+
     if(paper.checked){
         if(randomNumber==1){
             winner.innerText="DRAW";
